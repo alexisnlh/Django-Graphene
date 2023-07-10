@@ -1,0 +1,72 @@
+// Consultar todos los registros de la BBDD
+{
+  books {
+    id
+    title
+    description
+    createdAt
+    updatedAt
+  }
+}
+
+
+// Consultar todos los registros de la BBDD con sólo algunos campos
+{
+  books {
+    id
+    title
+  }
+}
+
+
+// Consultar un registro especificado por su id
+{
+  book(id: {ID DEL REGISTRO}) {
+    id
+    title
+    description
+  }
+}
+
+
+// Crear nuevo registro
+mutation {
+  createBook(
+    title: '{TÍTULO DEL LIBRO A REGISTRAR}',
+    description: '{DESCRIPCIÓN DEL LIBRO A REGISTRAR}'
+  ) {
+    book {
+      id
+      title
+      description
+      createdAt
+      updatedAt
+    }
+  }
+}
+
+
+// Eliminar registro
+mutation {
+  deleteBook (id: {ID DEL REGISTRO}) {
+    message
+  }
+}
+
+
+// Actualizar registro
+mutation {
+  updateBook(
+    id: {ID DEL REGISTRO},
+    title: '{TÍTULO DEL LIBRO A MODIFICAR}',
+    description: '{DESCRIPCIÓN DEL LIBRO A MODIFICAR}'
+  ) {
+  	book {
+      id
+      title
+      description
+      createdAt
+      updatedAt
+    }
+  }
+}
